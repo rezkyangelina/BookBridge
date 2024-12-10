@@ -52,11 +52,11 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="product.html" class="nav-item nav-link active">Product</a>
-                <a href="testimonial.html" class="nav-item nav-link">Testimonial</a>
+                <a href="index.html#about" class="nav-item nav-link acitive">About</a>
+                <a href="product.html" class="nav-item nav-link">Product</a>
+                <a href="index.html#testimonial" class="nav-item nav-link">Testimonial</a>
                 <a href="cart.html" class="nav-item nav-link">Cart</a>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="index.html#contact" class="nav-item nav-link">Contact</a>
             </div>
         </div>
     </nav>
@@ -89,7 +89,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item position-relative">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/Produk 1.jpeg" alt="">
+                        <img class="img-fluid" src="img/Produk 1.jpeg" alt="Cherry Comics 56th Series">
                     </div>
                     <div class="bg-light text-center p-4">
                         <h3 class="mt-2">Cherry Comics 56th Series</h3>
@@ -125,7 +125,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item position-relative">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/Produk 2.jpeg" alt="">
+                        <img class="img-fluid" src="img/Produk 2.jpeg" alt="Dasar-Dasar Riset & Analisis Data">
                     </div>
                     <div class="bg-light text-center p-4">
                         <h3 class="mt-2">Dasar-Dasar Riset & Analisis Data</h3>
@@ -159,7 +159,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item position-relative">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/Produk 3.jpeg" alt="">
+                        <img class="img-fluid" src="img/Produk 3.jpeg" alt="Man's Search For Meaning">
                     </div>
                     <div class="bg-light text-center p-4">
                         <h3 class="mt-2">Man's Search For Meaning</h3>
@@ -195,7 +195,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="team-item position-relative">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/Produk 4.jpeg" alt="">
+                        <img class="img-fluid" src="img/Produk 4.jpeg" alt="Basa Basi Yang Tak Basi">
                     </div>
                     <div class="bg-light text-center p-4">
                         <h3 class="mt-2">Basa Basi Yang Tak Basi</h3>
@@ -228,7 +228,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="team-item position-relative">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/Frame 26.png" alt="">
+                        <img class="img-fluid" src="img/Frame 26.png" alt="Hukum Perbankan Nasional Indonesia">
                     </div>
                     <div class="bg-light text-center p-4">
                         <h3 class="mt-2">Hukum Perbankan Nasional Indonesia</h3>
@@ -262,7 +262,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item position-relative">
                     <div class="position-relative">
-                        <img class="img-fluid" src="img/Produk 6.jpeg" alt="">
+                        <img class="img-fluid" src="img/Produk 6.jpeg" alt="Dear J">
                     </div>
                     <div class="bg-light text-center p-4">
                         <h3 class="mt-2">Dear J</h3>
@@ -296,14 +296,23 @@
         </div>
 
         <script>
-            function addToCart(name, price, image) {
-                // Simpan data produk ke localStorage
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
-                cart.push({ name, price, image, quantity: 1 });
-                localStorage.setItem("cart", JSON.stringify(cart));
-                alert(name + " added to cart!");
-                // Redirect ke halaman cart
-                window.location.href = "cart.html";
+           function addToCart(productName, price, image) {
+                // Ambil data keranjang dari localStorage
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                // Tambahkan produk ke keranjang
+                cart.push({
+                    name: productName,
+                    price: price,
+                    image: image,
+                    quantity: 1
+                });
+
+                // Simpan kembali data keranjang ke localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                // Redirect ke halaman cart.html
+                window.location.href = 'cart.html';
             }
         </script>
     </div>
